@@ -1,7 +1,13 @@
 import { Module } from '@nestjs/common';
-import { UserController } from './user.controller';
+import { UserService } from './user.service';
+import {UserController} from "./user.controller";
+import {SequelizeModule} from "@nestjs/sequelize";
+
+import {User} from "./user.model";
 
 @Module({
-  controllers: [UserController]
+  imports: [SequelizeModule.forFeature([User])], //  будем використовувати табличку юзер
+  controllers: [UserController],
+  providers: [UserService]
 })
 export class UserModule {}
