@@ -35,7 +35,7 @@ export class CreateUserDto {
         required: true
     })
     @IsNumber()
-    @Min(16)
+    @Min(18)
     age: number;
 
 
@@ -48,10 +48,10 @@ export class CreateUserDto {
     city: string;
 
     @ApiProperty({
-        example: false,
+        example: 'Bandery 21',
         required: true
     })
-    @IsBoolean()
-    isConfirmed: boolean;
+    @IsString()
+    address: string;
 
 }

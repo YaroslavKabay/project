@@ -17,4 +17,9 @@ export class UserService {
         return this.userRepository.create(user);
     }
 
+    async findOne(id) {
+        console.log(id);
+        return this.userRepository.findOne({where: {id: id}});
+    }
+
 }

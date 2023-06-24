@@ -39,7 +39,7 @@ export class User extends Model<User>{ // just model in db
 
 
     @ApiProperty({
-        example: 15,
+        example: 20,
         required: true
     })
     @Column({
@@ -56,10 +56,9 @@ export class User extends Model<User>{ // just model in db
 
 
     @ApiProperty({
-        example: true,
+        example: 'Bandery 21',
         required: true
     })
-    @Column({type: DataType.BOOLEAN})
-    isConfirmed: boolean;
-
+    @Column({type: DataType.STRING})
+    address: string;
 }

@@ -27,7 +27,8 @@ export class UserController {
     @ApiQuery({name: 'id', example: '111142dsf34243as2', type: String})//swagger
     @Get('/:id')
     getOneUserByID(@Param('id') id:string){
-        return `get by id ${id}`
+        // return `get by id ${id}`
+        return this.userService.findOne(id);
     }
 
     @Put()
