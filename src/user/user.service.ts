@@ -13,13 +13,22 @@ export class UserService {
         return this.userRepository.findAll();
     }
 
+    async findOne(id) {
+        return this.userRepository.findOne({where: {id}});
+    }
+
     async createUser(user: CreateUserDto) {
         return this.userRepository.create(user);
     }
 
-    async findOne(id: string) {
-        console.log(id);
-        return this.userRepository.findOne({where: {id: id}});
+    updateUser(id, updateUserDetails) {
+        return this.userRepository.update(updateUserDetails, {
+            where: {id},
+            returning: true, // This option is used to return the updated user record(s)
+        });
     }
 
+    deleteUser(id) {
+        return this.userRepository.destroy({where: {id:id}});
+    }
 }

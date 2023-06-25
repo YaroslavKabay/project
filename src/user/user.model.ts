@@ -3,13 +3,13 @@ import {ApiProperty} from "@nestjs/swagger";
 
 @Table({tableName: 'users'})
 export class User extends Model<User>{ // just model in db
-    // @Column({
-    //     type: DataType.STRING,
-    //     autoIncrement: true,
-    //     unique: true,
-    //     primaryKey: true
-    // })
-    // id: string;
+    @Column({
+        type: DataType.INTEGER,
+        autoIncrement: true,
+        unique: true,
+        primaryKey: true
+    })
+    id: number;
 
     @ApiProperty({
         example: 'Taras',
